@@ -1,9 +1,5 @@
 # Relatório Técnico da Simulação de Plasma Tokamak
 
-**Data:** 14 de Maio de 2025
-
-**Autor:** Manus (IA)
-
 ## 1. Introdução
 
 Este relatório detalha a análise da simulação de plasma em tokamaks desenvolvida, com foco na sua validade física e numérica, e estabelece uma comparação com abordagens e referências consagradas na literatura científica e técnica. O objetivo principal da simulação é fornecer uma ferramenta capaz de modelar o equilíbrio do plasma, através da solução da equação de Grad-Shafranov, e a dinâmica temporal das correntes nos circuitos poloidais e no plasma, considerando um modelo de circuito 0D acoplado.
@@ -194,7 +190,7 @@ A simulação de plasma tokamak desenvolvida constitui uma ferramenta valiosa pa
 *   Não avalia a estabilidade MHD dos equilíbrios calculados.
 *   A aproximação para `dL/dt` (derivadas das mútuas bobina-plasma) pode ser simplista para grandes variações de forma.
 
-**Recomendações para Melhorias Futuras:**
+**Melhorias Futuras:**
 *   **Solver GS:** Considerar a implementação de elementos finitos ou uma malha adaptativa para maior precisão e flexibilidade geométrica. Implementar a capacidade de lidar com contornos de plasma livres definidos por bobinas externas.
 *   **Simulador Dinâmico:** Evoluir para um modelo 1D ou 1.5D, incorporando equações de transporte para perfis de temperatura e densidade. Incluir modelos mais sofisticados para resistência do plasma (neoclássica, anômala) e fontes de aquecimento/corrente.
 *   **Acoplamento e Controle:** Implementar laços de controle PID para regulação da corrente de plasma, posição e forma, utilizando as tensões das bobinas como atuadores.
