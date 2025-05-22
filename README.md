@@ -172,7 +172,7 @@ A simulação atual captura a essência do acoplamento circuito-equilíbrio, mas
 *   **Indutâncias:** As fórmulas utilizadas para autoindutância de bobinas circulares e indutância mútua entre elas (baseadas em integrais elípticas) são padrões da eletrodinâmica [Referência: Grover, F. W. (1973). Inductance calculations: working formulas and tables. Courier Corporation]. A modelagem da autoindutância do plasma e seu acoplamento mútuo com bobinas externas usando aproximações analíticas ou semi-analíticas é uma prática comum em modelos 0D/1D para evitar o custo computacional de cálculos de campo 2D/3D a cada passo de tempo.
 *   **Resistividade de Spitzer:** A fórmula para a resistividade de Spitzer é um resultado clássico da teoria cinética de plasmas colisionais [Referência: Spitzer Jr, L., & Härm, R. (1953). Transport phenomena in a completely ionized gas. Physical Review, 89(5), 977]. Sua aplicação na simulação, com dependência de Te, é fisicamente fundamentada para a componente clássica da resistência do plasma.
 
-## 5. Conclusões e Recomendações
+## 5. Conclusões
 
 A simulação de plasma tokamak desenvolvida constitui uma ferramenta valiosa para o estudo e compreensão dos princípios básicos do equilíbrio MHD e da dinâmica de circuitos em tokamaks. Ela implementa com sucesso um solver de Grad-Shafranov com perfis de pressão e corrente flexíveis e escalonáveis, acoplado a um simulador dinâmico 0D que inclui um modelo físico para a matriz de indutâncias e para a resistência do plasma.
 
