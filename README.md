@@ -172,25 +172,7 @@ A simulação atual captura a essência do acoplamento circuito-equilíbrio, mas
 *   **Indutâncias:** As fórmulas utilizadas para autoindutância de bobinas circulares e indutância mútua entre elas (baseadas em integrais elípticas) são padrões da eletrodinâmica [Referência: Grover, F. W. (1973). Inductance calculations: working formulas and tables. Courier Corporation]. A modelagem da autoindutância do plasma e seu acoplamento mútuo com bobinas externas usando aproximações analíticas ou semi-analíticas é uma prática comum em modelos 0D/1D para evitar o custo computacional de cálculos de campo 2D/3D a cada passo de tempo.
 *   **Resistividade de Spitzer:** A fórmula para a resistividade de Spitzer é um resultado clássico da teoria cinética de plasmas colisionais [Referência: Spitzer Jr, L., & Härm, R. (1953). Transport phenomena in a completely ionized gas. Physical Review, 89(5), 977]. Sua aplicação na simulação, com dependência de Te, é fisicamente fundamentada para a componente clássica da resistência do plasma.
 
-## 5. Conclusões
-
-A simulação de plasma tokamak desenvolvida constitui uma ferramenta valiosa para o estudo e compreensão dos princípios básicos do equilíbrio MHD e da dinâmica de circuitos em tokamaks. Ela implementa com sucesso um solver de Grad-Shafranov com perfis de pressão e corrente flexíveis e escalonáveis, acoplado a um simulador dinâmico 0D que inclui um modelo físico para a matriz de indutâncias e para a resistência do plasma.
-
-**Pontos Fortes:**
-*   Implementação modular de um solver GS e um simulador dinâmico.
-*   Uso de métodos numéricos padrão (diferenças finitas, SOR, BDF).
-*   Modelos de perfis de plasma (tanh, polinomial) com escalonamento físico.
-*   Cálculo físico da matriz de indutâncias e da resistência de Spitzer.
-*   Acoplamento entre a evolução do equilíbrio 2D e a dinâmica do circuito 0D.
-
-**Limitações e Pontos Fracos:**
-*   O solver GS utiliza diferenças finitas, menos preciso que elementos finitos para geometrias complexas ou gradientes íngremes.
-*   O modelo dinâmico é 0D, não resolvendo perfis internos do plasma ou fenômenos de transporte.
-*   Ausência de modelos para aquecimento externo, fontes de partículas, efeitos neoclássicos/anômalos na resistência, e interação plasma-parede detalhada.
-*   Não avalia a estabilidade MHD dos equilíbrios calculados.
-*   A aproximação para `dL/dt` (derivadas das mútuas bobina-plasma) pode ser simplista para grandes variações de forma.
-
-**Melhorias Futuras:**
+## Melhorias Futuras
 *   **Solver GS:** Considerar a implementação de elementos finitos ou uma malha adaptativa para maior precisão e flexibilidade geométrica. Implementar a capacidade de lidar com contornos de plasma livres definidos por bobinas externas.
 *   **Simulador Dinâmico:** Evoluir para um modelo 1D ou 1.5D, incorporando equações de transporte para perfis de temperatura e densidade. Incluir modelos mais sofisticados para resistência do plasma (neoclássica, anômala) e fontes de aquecimento/corrente.
 *   **Acoplamento e Controle:** Implementar laços de controle PID para regulação da corrente de plasma, posição e forma, utilizando as tensões das bobinas como atuadores.
