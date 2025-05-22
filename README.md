@@ -4,7 +4,7 @@
 
 Este relatório detalha a análise da simulação de plasma em tokamaks desenvolvida, com foco na sua validade física e numérica, e estabelece uma comparação com abordagens e referências consagradas na literatura científica e técnica. O objetivo principal da simulação é fornecer uma ferramenta capaz de modelar o equilíbrio do plasma, através da solução da equação de Grad-Shafranov, e a dinâmica temporal das correntes nos circuitos poloidais e no plasma, considerando um modelo de circuito 0D acoplado.
 
-A simulação é composta por dois módulos principais: um solver de equilíbrio Grad-Shafranov (`grad_shafranov_solver.py`) e um simulador dinâmico do tokamak (`tokamak_simulation_physical_L_v2_fixed.py`). O primeiro calcula o equilíbrio MHD (Magneto-Hidrodinâmico) do plasma para um dado conjunto de perfis de pressão e corrente, enquanto o segundo resolve as equações de circuito para as bobinas e o plasma, acoplando-as com os parâmetros de equilíbrio que evoluem no tempo.
+A simulação é composta por dois módulos principais: um solver de equilíbrio Grad-Shafranov (`grad_shafranov_solver.py`) e um simulador dinâmico do tokamak (`tokamak_simulation.py`). O primeiro calcula o equilíbrio MHD (Magneto-Hidrodinâmico) do plasma para um dado conjunto de perfis de pressão e corrente, enquanto o segundo resolve as equações de circuito para as bobinas e o plasma, acoplando-as com os parâmetros de equilíbrio que evoluem no tempo.
 
 O escopo deste relatório abrange a descrição da metodologia implementada em cada módulo, uma análise crítica da validade dos modelos físicos e dos métodos numéricos empregados, e uma discussão sobre como a simulação se posiciona em relação a códigos e técnicas de referência na área de física de plasmas e fusão nuclear.
 
@@ -12,7 +12,7 @@ O escopo deste relatório abrange a descrição da metodologia implementada em c
 
 ## 2. Metodologia da Simulação Implementada
 
-A simulação desenvolvida é composta por dois scripts Python principais que interagem para modelar o comportamento do plasma em um tokamak: o `grad_shafranov_solver.py`, responsável por calcular o equilíbrio MHD bidimensional do plasma, e o `tokamak_simulation_physical_L_v2_fixed.py`, que simula a dinâmica temporal das correntes nos circuitos externos e no plasma, acoplada à evolução dos parâmetros de equilíbrio.
+A simulação desenvolvida é composta por dois scripts Python principais que interagem para modelar o comportamento do plasma em um tokamak: o `grad_shafranov_solver.py`, responsável por calcular o equilíbrio MHD bidimensional do plasma, e o `tokamak_simulation.py`, que simula a dinâmica temporal das correntes nos circuitos externos e no plasma, acoplada à evolução dos parâmetros de equilíbrio.
 
 ### 2.1. Solver de Equilíbrio Grad-Shafranov (`grad_shafranov_solver.py`)
 
@@ -51,7 +51,7 @@ O solver opera com condições de contorno de Dirichlet fixas, onde o valor de `
 
 
 
-### 2.2. Simulador Dinâmico do Tokamak (`tokamak_simulation_physical_L_v2_fixed.py`)
+### 2.2. Simulador Dinâmico do Tokamak (`tokamak_simulation.py`)
 
 Este módulo simula a evolução temporal das correntes nos circuitos das bobinas poloidais (PF), do solenóide ôhmico (OH) e no próprio plasma. Ele resolve um sistema de equações diferenciais ordinárias (ODEs) que descrevem a dinâmica do circuito acoplado, levando em consideração a evolução dos parâmetros do plasma, que são periodicamente atualizados pelo solver Grad-Shafranov.
 
